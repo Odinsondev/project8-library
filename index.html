@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>Library</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./normalize.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header></header>
+
+  <div class="content1">
+    <button type="button" id="addBook">Add a Book</button>
+  </div>
+  <div class="content2">
+    <dialog id="modal">
+      <p>test</p>
+      <form id="form" action="" method="post">
+        <ul>
+          <li>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" required/>
+          </li>
+          <li>
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" required/>
+          </li>
+          <li>
+            <label for="pages">Pages</label>
+            <input type="text" id="pages" name="pages" required/>
+          </li>
+          <button id="submit" type="submit">Submit</button>
+        </ul>
+      </form>
+    </dialog>
+  </div>
+  <div class="content3"></div>
+
+  <footer>
+    <p>Copyright &copy; Odinsondev 2023</p>
+  </footer>
+
+  <script src="./javascript.js"></script>
+</body>
+
+</html>
