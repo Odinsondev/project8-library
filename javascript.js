@@ -40,9 +40,20 @@ const addBookButton = document.getElementById('addBook');
 addBookButton.addEventListener('click', openModal);
 
 
+const cancelButton = document.getElementById('cancel');
+cancelButton.addEventListener('click', cancelModal);
+
+function cancelModal() {
+  modal.close();
+  document.getElementById('title').value =''
+  document.getElementById('author').value =''
+  document.getElementById('pages').value =''
+  document.getElementById('read').checked = false
+}
+
+
 const submitButton = document.getElementById('submit');
 submitButton.addEventListener('click', addBookToArray);
-
 
 function addBookToArray() {
 
@@ -123,7 +134,7 @@ function deleteBook() {
     }
   }
 }
-deleteBook();
+
 
 function clearCells() {
   for (let i = 0; i <= 9; i++) {
@@ -147,6 +158,4 @@ function clearCells() {
   }
 }
 
-function shit() {
-  console.log('shit');
-}
+//delete button still executing twice in certain situations!!!!!!!!!!!!!!!!!!!

@@ -8,8 +8,8 @@ body {
 }
 
 :root {
-  --background1: rgb(255, 255, 255);
-  --background2: rgb(255, 255, 255);
+  --background1: rgb(205, 199, 172);;
+  --background2: rgb(224, 246, 209);
   --text1: rgb(0, 0, 0);
   --text2: rgb(0, 0, 0);
   --text-footer: rgb(0, 0, 0);
@@ -34,27 +34,72 @@ body {
   /* font-size: 16px; */
 }
 
+body {
+  display: grid;
+  grid-template: 2fr 6fr 1fr 40px / 1fr 5fr 1fr;
+}
+
+header {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+}
+
+.content1 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.content2 {
+  background-color: rgb(255, 255, 255);
+  height: 0px;
+  width: 0px;
+}
+
+dialog {
+  background-color: rgb(205, 199, 172);
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.title-label {
+  color: blue;
+}
+
+.content3 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+
+  background-color: var(--background2);
+  border-radius: 10px;
+}
+
 table {
   border: 2px solid green;
 }
 
 th,
 td {
-  height: 50px;
-  width: 200px;
+  height: 40px;
+  width: 180px;
   border: 1px solid black;
 }
 
 
 footer {
-  height: 50px;
+  grid-column: 1 / 4;
+  grid-row: 4 / 5;
+
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
   color: var(--text-footer);
-  position: fixed;
+  /* position: fixed;
   bottom: 0;
   left: 0;
-  right: 0;
+  right: 0; */
 }
