@@ -6,27 +6,32 @@ function Book(title, author, pages, read) {   //object constructor for Book
   this.read = read;
 }
 
-const dune = new Book("Dune", "Frank Herbert", 658, "read");
-const duneMessiah = new Book("Dune Messiah", "Frank Herbert", 337, "not read");
+Book.prototype.toggleRead = function() {   //function to toggle read status
+  if (this.read === "read") {
+    this.read = "not read"
+  } else if (this.read === "not read") {
+    this.read = "read"
+  } else {}
+  addBookToLibrary();   //to update the list
+}
 
-/////////////////////
-const test3 = new Book("test3", "test3", 3, "not read");
-const test4 = new Book("test4", "test4", 4, "not read");
-const test5 = new Book("test5", "test5", 5, "not read");
-const test6 = new Book("test6", "test6", 6, "not read");
-//////////////////
+const dune = new Book("Dune", "Frank Herbert", 658, "read");
+const duneMessiah = new Book("Dune Messiah", "Frank Herbert", 337, "read");
+const childrenOfDune = new Book("Children of Dune", "Frank Herbert", 609, "not read");
+const godEmperorOfDune = new Book("God Emperor of Dune", "Frank Herbert", 587, "not read");
+const theHereticsOfDune = new Book("Heretics of Dune", "Frank Herbert", 669, "not read");
+const chapterhouseDune = new Book("Chapterhouse: Dune", "Frank Herbert", 624, "not read");
+
 
 const myLibrary = [];
 
 myLibrary.push(dune);
 myLibrary.push(duneMessiah);
+myLibrary.push(childrenOfDune);
+myLibrary.push(godEmperorOfDune);
+myLibrary.push(theHereticsOfDune);
+myLibrary.push(chapterhouseDune);
 
-////////////////////////
-myLibrary.push(test3);
-myLibrary.push(test4);
-myLibrary.push(test5);
-myLibrary.push(test6);
-////////////////////////////
 
 console.log(myLibrary);
 
@@ -108,11 +113,24 @@ function addBookToLibrary() {   //display Array objects on page
     if (deleteButtonTest === null) {   //testing if button already exists before creating new button
       let newButton = document.createElement('button');
       newButton.textContent = "Delete";
+      newButton.setAttribute('class', 'delete-button');
       newButton.setAttribute('id', `button${i}`);
       cell5.appendChild(newButton);
     } else {}
+
+
+    const readButtonTest = document.getElementById(`read${i}`);   //to test if element exists
+
+    if (readButtonTest === null) {   //testing if button already exists before creating new button
+      let newButton2 = document.createElement('button');
+      newButton2.textContent = "Read";
+      newButton2.setAttribute('class', 'read-button');
+      newButton2.setAttribute('id', `read${i}`);
+      cell4.appendChild(newButton2);
+    } else {}
   }
   deleteBook();   //rerun so new 'delete' buttons would function
+  readBook();
 }
 addBookToLibrary();
 
@@ -129,6 +147,21 @@ function deleteBook() {
 
       console.log(myLibrary);
       console.log(myLibrary.length);
+
+      addBookToLibrary();
+    }
+  }
+}
+
+
+function readBook() {
+
+  for (let i = 0; i <= myLibrary.length - 1; i++) {
+    const readButton = document.getElementById(`read${i}`);
+    readButton.addEventListener('click', readBookId);
+
+    function readBookId() {
+      myLibrary[i].toggleRead();
 
       addBookToLibrary();
     }
@@ -158,4 +191,7 @@ function clearCells() {
   }
 }
 
-//delete button still executing twice in certain situations!!!!!!!!!!!!!!!!!!!
+/* console.log(dune.read);
+dune.toggleRead();
+console.log(dune.read);
+ */

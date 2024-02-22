@@ -40,13 +40,41 @@ body {
 }
 
 header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   grid-column: 1 / 4;
   grid-row: 1 / 2;
 }
 
+.main-title {
+  font-size: 4rem;
+  margin: 1rem;
+  color: rgb(51, 134, 51);
+  justify-self: center;
+  font-family: "Protest Guerrilla";
+}
+
 .content1 {
+  display: flex;
+  justify-content: center;
+
   grid-column: 1 / 2;
   grid-row: 2 / 3;
+
+  background-color: var(--background2);
+  border: 1px solid rgb(179, 212, 161);
+  border-radius: 10px;
+  margin: 0 10% 0 10%;
+}
+
+#addBook {
+  margin-top: 10%;
+  height: 8%;
+  border: 1px solid green;
+  border-radius: 5px;
+
 }
 
 .content2 {
@@ -69,24 +97,74 @@ li {
 }
 
 .content3 {
+  display: grid;
+
   grid-column: 2 / 3;
   grid-row: 2 / 3;
 
   background-color: var(--background2);
-  border-radius: 10px;
+/*   border: 2px solid rgb(179, 212, 161);
+ */  border-radius: 10px;
+}
+
+caption {
+  border: 1px solid rgb(179, 212, 161);
 }
 
 table {
-  border: 2px solid green;
+  border-collapse: collapse;
 }
 
 th,
 td {
-  height: 40px;
-  width: 180px;
-  border: 1px solid black;
+  height: 5vh;
+  width: 10%;
+  border: 1px solid rgb(179, 212, 161);
+  padding-left: 0.5%;
+  text-align: left;
 }
 
+tbody tr:nth-child(odd) {
+  background-color: rgb(201, 231, 183);
+}
+
+#cell04,
+#cell14,
+#cell24,
+#cell34,
+#cell44,
+#cell54,
+#cell64,
+#cell74,
+#cell84,
+#cell94 {
+  position: relative;
+}
+
+.delete-button {
+  position: absolute;
+  top: 25%;
+  left: 35%;
+}
+
+#cell05,
+#cell15,
+#cell25,
+#cell35,
+#cell45,
+#cell55,
+#cell65,
+#cell75,
+#cell85,
+#cell95 {
+  position: relative;
+}
+
+.read-button {
+  position: absolute;
+  top: 25%;
+  right: 5%;
+}
 
 footer {
   grid-column: 1 / 4;
