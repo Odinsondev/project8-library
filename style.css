@@ -74,7 +74,14 @@ header {
   height: 8%;
   border: 1px solid green;
   border-radius: 5px;
+}
 
+#addBook:hover {
+  margin-top: 10%;
+  height: 8%;
+  border: 1px solid green;
+  border-radius: 5px;
+  background-color: rgb(227, 227, 227);
 }
 
 .content2 {
@@ -84,17 +91,55 @@ header {
 }
 
 dialog {
-  background-color: rgb(205, 199, 172);
+  background-color: var(--background2);
+}
+
+.modal-title-container {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-title {
+  font-weight: 500;
+}
+
+input {
+  margin-bottom: 5%;
+}
+
+label {
+  margin-bottom: 1%;
+}
+
+input,
+label {
+  display:block;
+}
+
+.read {
+  display: inline;
+}
+
+.read-box {
+  display: inline;
+  margin: 0 5% 10% 5%;
 }
 
 ul,
 li {
   list-style: none;
+  padding: 0;
 }
 
-.title-label {
-  color: blue;
+ul {
+  margin: 20px;
 }
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
 
 .content3 {
   display: grid;
@@ -103,12 +148,15 @@ li {
   grid-row: 2 / 3;
 
   background-color: var(--background2);
-/*   border: 2px solid rgb(179, 212, 161);
- */  border-radius: 10px;
+  border-radius: 10px;
 }
 
 caption {
   border: 1px solid rgb(179, 212, 161);
+}
+
+.title {
+  font-weight: 500;
 }
 
 table {
@@ -122,6 +170,10 @@ td {
   border: 1px solid rgb(179, 212, 161);
   padding-left: 0.5%;
   text-align: left;
+}
+
+th {
+  font-weight: 500;
 }
 
 tbody tr:nth-child(odd) {
@@ -176,8 +228,4 @@ footer {
   align-items: center;
   font-size: 1rem;
   color: var(--text-footer);
-  /* position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0; */
 }

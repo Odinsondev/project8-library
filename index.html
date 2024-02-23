@@ -16,16 +16,19 @@
     <p class="main-title">The Library</p>
   </header>
 
-  <div class="content1">
+  <div class="content1">   <!-- better to use element 'aside' -->
     <button type="button" id="addBook">New Book</button>
   </div>
+
   <div class="content2">
     <dialog id="modal">
-      <p>New Book Information</p>
+      <div class="modal-title-container">
+        <p class="modal-title">New Book Information</p>
+      </div>
       <form id="form" action="" method="get">
         <ul>
           <li>
-            <label class="title-label" for="title">Title</label>
+            <label for="title">Title</label>
             <input type="text" id="title" name="title" required/>
           </li>
           <li>
@@ -37,16 +40,19 @@
             <input type="text" id="pages" name="pages" required/>
           </li>
           <li>
-            <label for="read">Read</label>
-            <input type="checkbox" id="read" name="read" value="read">
+            <label class="read" for="read">Read</label>
+            <input class="read-box" type="checkbox" id="read" name="read" value="read">
           </li>
-          <button id="submit" type="button">Submit</button>
-          <button id="cancel" type="button">Cancel</button>
+          <div class="modal-buttons">
+            <button id="submit" type="button">Submit</button>
+            <button id="cancel" type="button">Cancel</button>
+          </div>
         </ul>
       </form>
     </dialog>
   </div>
-  <div class="content3">
+
+  <div class="content3">   <!-- better to use element 'aside' -->
     <table>
       <caption>
         <p class="title">My Books</p>
