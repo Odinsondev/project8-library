@@ -1,20 +1,38 @@
-//javascript.js version 1 - using object constructor
+//javascript.js version 2 - refractored code to use class
 
-function Book(title, author, pages, read) {   //object constructor for Book
+class Book {                                 //class of Book
+  constructor (title, author, pages, read) {   //object constructor for Book
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+
+  toggleRead() {   //class method to toggle read status
+    if (this.read === "Read") {
+      this.read = "Not read"
+    } else if (this.read === "Not read") {
+      this.read = "Read"
+    } else {}
+    addBookToLibrary();   //to update the list of books
+  }
+}
+
+/* function Book(title, author, pages, read) {   //object constructor for Book
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
-}
+} */
 
-Book.prototype.toggleRead = function() {   //function to toggle read status
+/* Book.prototype.toggleRead = function() {   //function to toggle read status
   if (this.read === "Read") {
     this.read = "Not read"
   } else if (this.read === "Not read") {
     this.read = "Read"
   } else {}
   addBookToLibrary();   //to update the list of books
-}
+} */
 
 
 const dune = new Book("Dune", "Frank Herbert", 658, "Read");
