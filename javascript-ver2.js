@@ -1,4 +1,4 @@
-//javascript.js version 2 - refractored code to use class
+//javascript.js version 2 - refactored code to use class
 
 class Book {                                 //class of Book
   constructor (title, author, pages, read) {   //object constructor for Book
