@@ -25,7 +25,7 @@
       <div class="modal-title-container">
         <p class="modal-title">New Book Information</p>
       </div>
-      <form id="form" action="" method="get">
+      <form onsubmit="event.preventDefault();" id="form" action="" method="get">
         <ul>
           <li>
             <label for="title">Title</label>
@@ -37,14 +37,14 @@
           </li>
           <li>
             <label for="pages">Pages</label>
-            <input type="text" id="pages" name="pages" required/>
+            <input type="number" id="pages" name="pages" required min="1" max="9999"/>
           </li>
           <li>
             <label class="read" for="read">Read</label>
             <input class="read-box" type="checkbox" id="read" name="read" value="read">
           </li>
           <div class="modal-buttons">
-            <button id="submit" type="button">Submit</button>
+            <button id="submit" type="submit">Submit</button>
             <button id="cancel" type="button">Cancel</button>
           </div>
         </ul>

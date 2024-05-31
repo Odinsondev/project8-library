@@ -1,19 +1,21 @@
-html, body {
+html,
+body {
   height: 100%;
 }
 
 body {
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
   background-color: var(--background1, white);
 }
 
 :root {
-  --background1: rgb(205, 199, 172);;
+  --background1: rgb(205, 199, 172);
   --background2: rgb(224, 246, 209);
   --text1: rgb(0, 0, 0);
   --text2: rgb(0, 0, 0);
   --text-footer: rgb(0, 0, 0);
-  /* font-size: 16px; */   /* Disables browser font size setting */
+  /* font-size: 16px; */ /* Disables browser font size setting */
 }
 
 :root.light {
@@ -53,7 +55,7 @@ header {
   margin: 1rem;
   color: rgb(51, 134, 51);
   justify-self: center;
-  font-family: "Protest Guerrilla";
+  font-family: 'Protest Guerrilla';
 }
 
 .content1 {
@@ -113,7 +115,11 @@ label {
 
 input,
 label {
-  display:block;
+  display: block;
+}
+
+#pages {
+  width: 97%;
 }
 
 .read {
@@ -139,7 +145,6 @@ ul {
   display: flex;
   justify-content: space-around;
 }
-
 
 .content3 {
   display: grid;

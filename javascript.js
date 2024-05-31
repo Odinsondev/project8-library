@@ -77,7 +77,22 @@ function cancelModal() {
 }
 
 const submitButton = document.getElementById('submit');
-submitButton.addEventListener('click', addBookToArray);
+submitButton.addEventListener('click', checkValidity);
+
+//checking form validity
+function checkValidity() {
+  const title = document.getElementById('title');
+  const author = document.getElementById('author');
+  const pages = document.getElementById('pages');
+
+  if (
+    title.validity.valid === true &&
+    author.validity.valid === true &&
+    pages.validity.valid === true
+  ) {
+    setTimeout(addBookToArray, 10);
+  }
+}
 
 function addBookToArray() {
   let ifRead = ''; // read/not read checkbox
